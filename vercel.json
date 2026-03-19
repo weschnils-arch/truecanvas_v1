@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd TrueCanvas_V1 && npm install && npm run build",
+  "outputDirectory": "TrueCanvas_V1/dist",
+  "framework": "vite",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
