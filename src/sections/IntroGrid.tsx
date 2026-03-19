@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLanguage } from '../context/LanguageContext';
+import { artistsConfig } from '../config';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,16 +25,6 @@ function Counter({ end, shouldAnimate }: { end: number; shouldAnimate: boolean }
   }, [end, shouldAnimate]);
   return <span>{count}</span>;
 }
-
-const gallery = [
-  { image: '/images/gallery/realism.webp', style: 'Realismus', artist: 'Max' },
-  { image: '/images/gallery/fineline-floral.webp', style: 'Fineline Floral', artist: 'Rita' },
-  { image: '/images/gallery/anime.webp', style: 'Anime', artist: 'Hera' },
-  { image: '/images/gallery/botanical.webp', style: 'Botanical', artist: 'Rita' },
-  { image: '/images/gallery/cartoon.webp', style: 'Cartoon', artist: 'Hera' },
-  { image: '/images/gallery/skull-graphic.webp', style: 'Skull Graphic', artist: 'Roli' },
-  { image: '/images/gallery/floral-arm.webp', style: 'Floral Arm', artist: 'Vroni' },
-];
 
 export function IntroGrid() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -123,17 +114,17 @@ export function IntroGrid() {
           ))}
         </div>
 
-        {/* Gallery — all 7 images in one grid */}
+        {/* Artists Grid */}
         <div className="gallery-grid grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
-          {gallery.map((item, i) => (
-            <Link to="/artists" key={i} className={`gallery-item group ${i === 1 || i === 4 ? 'md:mt-8' : ''}`}>
+          {artistsConfig.artists.map((artist, i) => (
+            <Link to="/artists" key={artist.id} className={`gallery-item group ${i === 1 || i === 4 ? 'md:mt-8' : ''}`}>
               <div className="overflow-hidden bg-charcoal/5">
-                <img src={item.image} alt={`${item.style} by ${item.artist}`}
+                <img src={artist.image} alt={artist.name}
                   className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
               </div>
               <div className="flex items-center justify-between py-3">
-                <p className="text-[12px] text-charcoal/60 tracking-wide">{item.style}</p>
-                <p className="text-[11px] text-charcoal/30">{item.artist}</p>
+                <p className="text-[12px] text-charcoal/60 tracking-wide">{artist.name}</p>
+                <p className="text-[11px] text-charcoal/30">{artist.styles.join(', ')}</p>
               </div>
             </Link>
           ))}
