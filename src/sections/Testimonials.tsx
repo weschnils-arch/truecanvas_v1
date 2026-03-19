@@ -105,8 +105,8 @@ export function Testimonials() {
       </div>
 
       <div ref={imageRef} className="w-full overflow-hidden aspect-[16/7] md:aspect-[21/8]">
-        <img ref={innerImageRef} src="/images/studio/JollySchwarz-4003.webp" alt="TrueCanvas Studio"
-          loading="lazy" className="w-full h-[120%] object-cover" />
+        <img ref={innerImageRef} src="/images/studio/studio-1.webp" alt="TrueCanvas Studio"
+          loading="lazy" className="w-full h-[120%] object-cover grayscale" />
       </div>
     </section>
   );

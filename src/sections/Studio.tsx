@@ -47,7 +47,7 @@ Come by and experience the special atmosphere at True Canvas for yourself.`;
   const paragraphs = t(descriptionDe, descriptionEn).split('\n\n');
 
   return (
-    <section ref={sectionRef} id="studio" className="w-full py-16 md:py-24 bg-paper">
+    <section ref={sectionRef} id="studio" className="w-full pt-0 pb-16 md:pb-24 bg-paper">
       <div ref={imageRef} className="w-full overflow-hidden aspect-[16/7] md:aspect-[21/8] mb-14 md:mb-20">
         <img ref={innerImageRef} src={studioConfig.image} alt="TrueCanvas Studio Wien" loading="lazy"
           className="w-full h-[120%] object-cover grayscale" />
