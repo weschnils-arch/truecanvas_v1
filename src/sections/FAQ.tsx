@@ -83,15 +83,17 @@ export function FAQ() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.faq-head', {
-        opacity: 0, y: 30, duration: 1, ease: 'power2.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', once: true },
-      });
+      gsap.fromTo('.faq-head',
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, ease: 'power2.out',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', toggleActions: 'play none none none' } }
+      );
 
-      gsap.from('.faq-list', {
-        opacity: 0, y: 40, duration: 1, delay: 0.2, ease: 'power2.out',
-        scrollTrigger: { trigger: '.faq-list', start: 'top 88%', once: true },
-      });
+      gsap.fromTo('.faq-list',
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 1, delay: 0.2, ease: 'power2.out',
+          scrollTrigger: { trigger: '.faq-list', start: 'top 88%', toggleActions: 'play none none none' } }
+      );
     }, sectionRef);
 
     return () => ctx.revert();

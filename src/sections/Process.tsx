@@ -38,20 +38,23 @@ export function Process() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.process-head', {
-        opacity: 0, y: 40, duration: 1, ease: 'power2.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', once: true },
-      });
+      gsap.fromTo('.process-head',
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 1, ease: 'power2.out',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', toggleActions: 'play none none none' } }
+      );
 
-      gsap.from('.process-step', {
-        opacity: 0, y: 50, stagger: 0.2, duration: 1, ease: 'power3.out',
-        scrollTrigger: { trigger: '.process-step', start: 'top 85%', once: true },
-      });
+      gsap.fromTo('.process-step',
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, stagger: 0.2, duration: 1, ease: 'power3.out',
+          scrollTrigger: { trigger: '.process-step', start: 'top 85%', toggleActions: 'play none none none' } }
+      );
 
-      gsap.from('.process-cta', {
-        opacity: 0, y: 30, duration: 1, ease: 'power2.out',
-        scrollTrigger: { trigger: '.process-cta', start: 'top 90%', once: true },
-      });
+      gsap.fromTo('.process-cta',
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, ease: 'power2.out',
+          scrollTrigger: { trigger: '.process-cta', start: 'top 90%', toggleActions: 'play none none none' } }
+      );
     }, sectionRef);
 
     return () => ctx.revert();

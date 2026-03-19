@@ -43,15 +43,17 @@ export function Piercing() {
         );
       }
 
-      gsap.from('.piercing-text', {
-        opacity: 0, y: 40, duration: 1.2, ease: 'power2.out',
-        scrollTrigger: { trigger: '.piercing-text', start: 'top 85%', once: true },
-      });
+      gsap.fromTo('.piercing-text',
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out',
+          scrollTrigger: { trigger: '.piercing-text', start: 'top 85%', toggleActions: 'play none none none' } }
+      );
 
-      gsap.from('.piercing-feat', {
-        opacity: 0, y: 30, stagger: 0.15, duration: 0.8, ease: 'power2.out',
-        scrollTrigger: { trigger: '.piercing-feat', start: 'top 90%', once: true },
-      });
+      gsap.fromTo('.piercing-feat',
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, stagger: 0.15, duration: 0.8, ease: 'power2.out',
+          scrollTrigger: { trigger: '.piercing-feat', start: 'top 90%', toggleActions: 'play none none none' } }
+      );
     }, sectionRef);
 
     return () => ctx.revert();

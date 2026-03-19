@@ -46,15 +46,17 @@ export function Testimonials() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.test-head', {
-        opacity: 0, y: 30, duration: 1, ease: 'power2.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', once: true },
-      });
+      gsap.fromTo('.test-head',
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, ease: 'power2.out',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', toggleActions: 'play none none none' } }
+      );
 
-      gsap.from('.review-card', {
-        opacity: 0, y: 50, stagger: 0.1, duration: 0.8, ease: 'power3.out',
-        scrollTrigger: { trigger: '.review-card', start: 'top 85%', once: true },
-      });
+      gsap.fromTo('.review-card',
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out',
+          scrollTrigger: { trigger: '.review-card', start: 'top 85%', toggleActions: 'play none none none' } }
+      );
 
       if (innerImageRef.current && imageRef.current) {
         gsap.fromTo(innerImageRef.current,

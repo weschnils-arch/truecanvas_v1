@@ -21,15 +21,17 @@ export function Studio() {
         );
       }
 
-      gsap.from('.studio-label', {
-        opacity: 0, y: 30, duration: 1, ease: 'power2.out',
-        scrollTrigger: { trigger: '.studio-label', start: 'top 85%', once: true },
-      });
+      gsap.fromTo('.studio-label',
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, ease: 'power2.out',
+          scrollTrigger: { trigger: '.studio-label', start: 'top 85%', toggleActions: 'play none none none' } }
+      );
 
-      gsap.from('.studio-text-col', {
-        opacity: 0, y: 40, duration: 1, stagger: 0.15, ease: 'power2.out',
-        scrollTrigger: { trigger: '.studio-text-col', start: 'top 85%', once: true },
-      });
+      gsap.fromTo('.studio-text-col',
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 1, stagger: 0.15, ease: 'power2.out',
+          scrollTrigger: { trigger: '.studio-text-col', start: 'top 85%', toggleActions: 'play none none none' } }
+      );
     }, sectionRef);
 
     return () => ctx.revert();

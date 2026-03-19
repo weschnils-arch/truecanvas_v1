@@ -48,15 +48,17 @@ export function IntroGrid() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.intro-headline', {
-        opacity: 0, y: 50, duration: 1.2, ease: 'power3.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 75%', once: true },
-      });
+      gsap.fromTo('.intro-headline',
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 75%', toggleActions: 'play none none none' } }
+      );
 
-      gsap.from('.intro-desc', {
-        opacity: 0, y: 30, duration: 1, delay: 0.2, ease: 'power3.out',
-        scrollTrigger: { trigger: '.intro-desc', start: 'top 85%', once: true },
-      });
+      gsap.fromTo('.intro-desc',
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, delay: 0.2, ease: 'power3.out',
+          scrollTrigger: { trigger: '.intro-desc', start: 'top 85%', toggleActions: 'play none none none' } }
+      );
 
       ScrollTrigger.create({
         trigger: '.stat-row',
@@ -65,17 +67,19 @@ export function IntroGrid() {
         once: true,
       });
 
-      gsap.from('.stat-block', {
-        y: 30, opacity: 0, stagger: 0.12, duration: 0.9, ease: 'power3.out',
-        scrollTrigger: { trigger: '.stat-row', start: 'top 88%', once: true },
-      });
+      gsap.fromTo('.stat-block',
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, stagger: 0.12, duration: 0.9, ease: 'power3.out',
+          scrollTrigger: { trigger: '.stat-row', start: 'top 88%', toggleActions: 'play none none none' } }
+      );
 
       const galleryItems = sectionRef.current?.querySelectorAll('.gallery-item');
       if (galleryItems) {
-        gsap.from(galleryItems, {
-          y: 70, opacity: 0, stagger: 0.08, duration: 0.8, ease: 'power3.out',
-          scrollTrigger: { trigger: '.gallery-grid', start: 'top 90%', once: true },
-        });
+        gsap.fromTo(galleryItems,
+          { y: 70, opacity: 0 },
+          { y: 0, opacity: 1, stagger: 0.08, duration: 0.8, ease: 'power3.out',
+            scrollTrigger: { trigger: '.gallery-grid', start: 'top 90%', toggleActions: 'play none none none' } }
+        );
       }
     }, sectionRef);
 

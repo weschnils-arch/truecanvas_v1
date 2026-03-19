@@ -35,15 +35,17 @@ export function Services() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.services-label', {
-        opacity: 0, y: 20, duration: 1, ease: 'power2.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', once: true },
-      });
+      gsap.fromTo('.services-label',
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1, ease: 'power2.out',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', toggleActions: 'play none none none' } }
+      );
 
-      gsap.from('.service-block', {
-        opacity: 0, y: 50, duration: 1, stagger: 0.18, ease: 'power3.out',
-        scrollTrigger: { trigger: '.service-block', start: 'top 85%', once: true },
-      });
+      gsap.fromTo('.service-block',
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1, stagger: 0.18, ease: 'power3.out',
+          scrollTrigger: { trigger: '.service-block', start: 'top 85%', toggleActions: 'play none none none' } }
+      );
     }, sectionRef);
 
     return () => ctx.revert();

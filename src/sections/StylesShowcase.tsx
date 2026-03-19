@@ -21,15 +21,17 @@ export function StylesShowcase() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.showcase-head', {
-        opacity: 0, y: 30, duration: 1, ease: 'power2.out',
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', once: true },
-      });
+      gsap.fromTo('.showcase-head',
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, ease: 'power2.out',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', toggleActions: 'play none none none' } }
+      );
 
-      gsap.from('.showcase-card', {
-        opacity: 0, y: 60, stagger: 0.1, duration: 0.8, ease: 'power3.out',
-        scrollTrigger: { trigger: '.showcase-card', start: 'top 88%', once: true },
-      });
+      gsap.fromTo('.showcase-card',
+        { opacity: 0, y: 60 },
+        { opacity: 1, y: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out',
+          scrollTrigger: { trigger: '.showcase-card', start: 'top 88%', toggleActions: 'play none none none' } }
+      );
     }, sectionRef);
 
     return () => ctx.revert();

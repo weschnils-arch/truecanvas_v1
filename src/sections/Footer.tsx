@@ -13,10 +13,11 @@ export function Footer() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.footer-inner', {
-        opacity: 0, y: 30, duration: 1, ease: 'power2.out',
-        scrollTrigger: { trigger: footerRef.current, start: 'top 90%', once: true },
-      });
+      gsap.fromTo('.footer-inner',
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 1, ease: 'power2.out',
+          scrollTrigger: { trigger: footerRef.current, start: 'top 90%', toggleActions: 'play none none none' } }
+      );
     }, footerRef);
 
     return () => ctx.revert();
