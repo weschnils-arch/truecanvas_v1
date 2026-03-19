@@ -9,6 +9,7 @@ import { Studio } from './sections/Studio';
 import { Piercing } from './sections/Piercing';
 import { Process } from './sections/Process';
 import { Testimonials } from './sections/Testimonials';
+import { StylesShowcase } from './sections/StylesShowcase';
 import { FAQ } from './sections/FAQ';
 import { Contact } from './sections/Contact';
 import { Footer } from './sections/Footer';
@@ -45,6 +46,7 @@ function HomePage() {
     <main className="relative w-full overflow-x-hidden">
       <Hero />
       <IntroGrid />
+      <StylesShowcase />
       <Services />
       <Studio />
       <Piercing />
