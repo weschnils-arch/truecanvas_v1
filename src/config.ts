@@ -129,7 +129,7 @@ export const studioConfig: StudioConfig = {
   subtitle: "Das Studio",
   title: "Wo Kunst ein Zuhause hat",
   description: "Als Max True Canvas 2018 mitten in Wien gründete, war die Vision klar: Ein Studio zu schaffen, das die typischen Klischees hinter sich lässt. Unser Raum ist hell, modern und einladend – ein Ort, an dem du dich sicher und verstanden fühlst, während wir deine Ideen zum Leben erwecken.\n\nBei uns triffst du auf ein festes Team aus passionierten Artists und ein ständig wechselndes Line-up an internationalen Gästen. Was uns alle verbindet? Die Liebe zum präzisen Handwerk und der Anspruch, dass jedes Tattoo so einzigartig ist wie der Mensch, der es trägt.\n\nKomm vorbei und überzeug dich selbst von der besonderen Atmosphäre bei True Canvas.",
-  image: "/images/team-photo.webp",
+  image: "/images/studio/hero.webp",
 };
 
 // Tattoo Styles Section (Finde deinen Artist)

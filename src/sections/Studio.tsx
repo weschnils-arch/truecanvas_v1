@@ -50,7 +50,7 @@ Come by and experience the special atmosphere at True Canvas for yourself.`;
     <section ref={sectionRef} id="studio" className="w-full py-16 md:py-24 bg-paper">
       <div ref={imageRef} className="w-full overflow-hidden aspect-[16/7] md:aspect-[21/8] mb-14 md:mb-20">
         <img ref={innerImageRef} src={studioConfig.image} alt="TrueCanvas Studio Wien" loading="lazy"
-          className="w-full h-[120%] object-cover" />
+          className="w-full h-[120%] object-cover grayscale" />
       </div>
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
