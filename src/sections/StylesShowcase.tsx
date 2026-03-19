@@ -12,7 +12,6 @@ const styles = [
   { name: 'Fineline', artist: '@mannytatt', image: '/images/guests/mannytatt.webp' },
   { name: 'Floral', artist: '@vlada.s.tattoo', image: '/images/guests/vlada.s.tattoo.webp' },
   { name: 'Realismus', artist: '@talala_tattoo', image: '/images/guests/talala_tattoo.webp' },
-  { name: 'Neo Traditional', artist: '@shavelkina', image: '/images/guests/shavelkina-1.webp' },
 ];
 
 export function StylesShowcase() {
@@ -38,7 +37,7 @@ export function StylesShowcase() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-24 md:py-36 bg-paper">
+    <section ref={sectionRef} className="w-full py-16 md:py-24 bg-paper">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="showcase-head flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-24">
           <div>
@@ -82,17 +81,6 @@ export function StylesShowcase() {
             </div>
           ))}
 
-          <div className="showcase-card col-span-2 md:col-span-1">
-            <div className="group relative overflow-hidden">
-              <img src={styles[5].image} alt={styles[5].name}
-                className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 p-5 md:p-6">
-                <p className="text-paper/60 text-[10px] tracking-journal uppercase mb-1">{styles[5].artist}</p>
-                <p className="text-paper text-xs md:text-sm tracking-archive uppercase">{styles[5].name}</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
